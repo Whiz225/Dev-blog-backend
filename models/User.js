@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema(
       minlength: [8, "password should not be less down 8 characters"],
       select: false,
     },
-
+    avatar: String,
     passwordConfirm: {
       type: String,
       validate: {

@@ -17,6 +17,10 @@ const postSchema = new mongoose.Schema(
       ref: "User",
       required: [true, "Your post must have an author"],
     },
+    image: String,
+    category: String,
+    readTime: String,
+    slug: String,
     createdAt: {
       type: Date,
       default: Date.now,

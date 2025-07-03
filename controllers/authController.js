@@ -73,6 +73,7 @@ exports.registerUser = catchAsync(async (req, res, next) => {
 // @route   POST /api/auth/login
 // @access  Public
 exports.loginUser = catchAsync(async (req, res, next) => {
+  console.log("execute");
   const { username, password } = req.body;
   if (!username || !password)
     return next(new AppError("Please provide your username and password"), 400);
