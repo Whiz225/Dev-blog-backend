@@ -7,7 +7,7 @@ const { getAll, getOne, createOne } = require("./factoryController");
 // @desc    Get all posts
 // @route   GET /api/posts/all
 // @access  Public
-const getAllPosts = getAll(Post, { path: "author", select: "username email" });
+const getAllPosts = getAll(Post, { path: "author", select: "username email avatar" });
 
 // @desc    Get my posts
 // @route   GET /api/posts/author
@@ -15,7 +15,7 @@ const getAllPosts = getAll(Post, { path: "author", select: "username email" });
 const getMyPosts = catchAsync(async (req, res, next) => {
   const posts = await Post.find({ author: req.user._id }).populate({
     path: "author",
-    select: "username email",
+    select: "username email avatar",
   });
 
   res.status(200).json({
@@ -30,7 +30,10 @@ const getMyPosts = catchAsync(async (req, res, next) => {
 // @desc    Get single post
 // @route   GET /api/posts/:id
 // @access  Public
-const getPost = getOne(Post, { path: "author", select: "username email" });
+const getPost = getOne(Post, {
+  path: "author",
+  select: "username email avatar",
+});
 
 // @desc    Create new post
 // @route   POST /api/posts/author

@@ -67,7 +67,7 @@ const users = [
     email: "william.brown@example.com",
     password: "Yummy!Tummy",
     createdAt: new Date("2022-10-19T12:45:00Z"),
-    avatar: "/users/user-10.jpg  foodie_explorer.jpg",
+    avatar: "/users/user-10.jpg",
   },
   {
     username: "startup_ceo",
