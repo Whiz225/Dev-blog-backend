@@ -1,3 +1,5 @@
+// controllers/userController.js
+
 // const multer = require("multer");
 const User = require("../models/User.js");
 const catchAsync = require("../utils/catchAsync.js");

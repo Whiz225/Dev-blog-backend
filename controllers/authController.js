@@ -1,3 +1,5 @@
+// controllers/authController.js
+
 const AppError = require("../utils/AppError");
 const catchAsync = require("../utils/catchAsync");
 const Email = require("../utils/email");
@@ -51,9 +53,9 @@ exports.registerUser = catchAsync(async (req, res, next) => {
   // Check if user exists
   const userExists = await User.findOne({ email });
 
-  if (userExists) {
-    return next(new AppError("User already exists", 400));
-  }
+  // if (userExists) {
+  //   return next(new AppError("Username already exist", 400));
+  // }
 
   // Create user
   const newUser = await User.create({

@@ -1,3 +1,5 @@
+// controllers/errorController.js
+
 const AppError = require("../utils/AppError");
 
 const sendErrorDev = (err, req, res) => {
