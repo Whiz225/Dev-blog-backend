@@ -84,9 +84,6 @@ app.use(
 
 app.use(compression());
 
-// Option 2: Ignore favicon requests (if you don't have one)
-// app.get("/favicon.ico", (req, res) => res.status(204).end());
-
 // 2. ROUTES
 app.use("/api/auth", authRoutes);
 app.use("/api/posts", postRoutes);

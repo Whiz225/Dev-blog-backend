@@ -15,7 +15,6 @@ const { protect } = require("../middleware/authMiddleware");
 // Public routes
 router.route("/allPosts").get(getAllPosts);
 router.route("/allPosts/:id").get(validateObjectId("id"), getPost);
-// router.route("/:id").get(getAllPosts);
 
 // Protected routes
 router.use(protect);
@@ -27,7 +26,6 @@ router
 
 router
   .route("/author/:id")
-  // .get(getPost)
   .patch(validateObjectId("id"), updatePost) // PUT /api/posts/:id - Update post
   .delete(validateObjectId("id"), deletePost); // DELETE /api/posts/:id - Delete post
 
