@@ -36,5 +36,12 @@ const postSchema = new mongoose.Schema(
   }
 );
 
+// Recreate updatedAt before saving if there's any filed update
+postSchema.pre("save", function (next) {
+  if (!this.isModified()) return next();
+  this.updatedAt = new Date();
+  next();
+});
+
 const Post = mongoose.model("Post", postSchema);
 module.exports = Post;
